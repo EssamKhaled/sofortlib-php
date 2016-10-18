@@ -336,4 +336,32 @@ abstract class Multipay extends AbstractWrapper
         
         return $reason;
     }
+    
+    /**
+     * Setter for recipient
+     *
+     * @param $holder
+     * @param $iban
+     * @param $bic
+     * @param $name1
+     * @param $name2
+     * @param $street
+     * @param $zipcode
+     * @param $city
+     *
+     * @return Multipay $this
+     */
+    public function setRecipient($holder, $iban, $bic, $name1, $name2, $street, $zipcode, $city)
+    {
+        $this->_parameters['recipient']['holder'] = $holder;
+        $this->_parameters['recipient']['iban'] = $iban;
+        $this->_parameters['recipient']['bic'] = $bic;
+        $this->_parameters['recipient']['name1'] = $name1;
+        $this->_parameters['recipient']['name2'] = $name2;
+        $this->_parameters['recipient']['street'] = $street;
+        $this->_parameters['recipient']['zipcode'] = $zipcode;
+        $this->_parameters['recipient']['city'] = $city;
+
+        return $this;
+    }    
 }
